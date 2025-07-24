@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Cadastrar Paciente</title>
+</head>
+<body>
+    <div class="container"> 
+
+            <h1>Cadastro de Paciente</h1>
+            <form method="Post">
+                <label >Nome:</label>
+                <input type="text" name="Nome" required>
+                
+                <label >Idade:</label>
+                <input type="number" name="Idade" required>
+
+                <label >Especialista:</label>
+                <input type="text" name="Especialista" required>
+
+                <button type="submit">
+                    Cadastrar
+
+                </button>
+
+               
+               
+
+            </form>
+            {% if mensagem %}
+            <div class="resultado">
+                <p>{{mensagem}}</p>
+            </div>
+            {% endif %}
+    </div>
+    
+</body>
+</html>

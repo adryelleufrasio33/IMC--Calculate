@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+   <div class="container">
+    <h1 class="titulo">Calculadora de IMC</h1>
+
+    <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label>Peso(kg):</label>
+        <input type="number" name="peso" step="any" placeholder="Ex: 70" required>
+
+        <label>Altura(m):</label>
+        <input type="number" name="altura" step="any" placeholder="Ex: 1.75" required>
+
+        <button type="submit">Calcular</button>
+        <button type="button" onclick="window.location.href='/cadastro_paciente'">Cadastrar Paciente</button>
+
+</a>
+    </form>
+
+    {% if resultado %}
+        <div class="resultado">
+            <p><strong>Nome:</strong> {{ resultado.nome }}</p>
+            <p><strong>Altura:</strong> {{ resultado.altura|round(2) }}</p>
+            <p><strong>Peso:</strong> {{ resultado.peso|round(2) }}</p>
+            <p><strong>IMC:</strong> {{ resultado.imc }}</p>
+            <p><strong>Classificação:</strong> {{ resultado.classificacao }}</p>
+        </div>
+    {% endif %}
+</div>
+
+
+</body>
+</html>
