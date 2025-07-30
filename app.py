@@ -52,9 +52,9 @@ def index():
 @app.route("/cadastro_paciente", methods=["GET", "POST"])
 def cadastro_paciente():
     Mensagem = None
-    if request .method == "Post":
+    if request .method == "POST":
         nome = request.form["Nome"]
-        idade = request.form["idade"]
+        idade = request.form["Idade"]   
         especialista = request.form["Especialista"]
         Mensagem = (f"Paciente {nome},({idade} anos), marcado para {especialista}")
         return render_template("cadastrar_paciente.html", Mensagem=Mensagem)

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Cadastrar Paciente</title>
+    <title>Marcar Consulta</title>
 </head>
 <body>
     <div class="container"> 
@@ -28,9 +28,17 @@
                
 
             </form>
-            {% if mensagem %}
+            {% if resultado %}
+        <div class="resultado">
+            <p><strong>Nome:</strong> {{ resultado.nome }}</p>
+            <p><strong>Idade:</strong> {{ resultado.idade }}</p>
+            <p><strong>Especialista:</strong> {{ resultado.Especialista }}</p>
+            
+        </div>
+    {% endif %}
+            {% if Mensagem %}
             <div class="resultado">
-                <p>{{mensagem}}</p>
+                <p>{{Mensagem}}</p>
             </div>
             {% endif %}
     </div>
